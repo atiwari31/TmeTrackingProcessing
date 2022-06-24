@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dcardprocessing.controller.UserController">
+     <top>
+      <MenuBar BorderPane.alignment="TOP_LEFT">
+        <menus>
+          <Menu mnemonicParsing="false" text="Menu">
+            <items>
+             <MenuItem mnemonicParsing="false" onAction="#home" text="Home" />
+              <MenuItem mnemonicParsing="false" onAction="#ipActionView" text="IP Scan" />
+               <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" onAction="#logout" text="Logout" />
+              
+            </items>
+          </Menu>
+          	<Menu mnemonicParsing="false" text="Scan">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#scanSchedule" text="Scan Schedule" />
+              <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" onAction="#scanScheduleDetails" text="Scan Schedule Details" />
+            </items>
+          </Menu>
+         
+        </menus>
+      </MenuBar>
+   </top>
+
+
+      
+
+   <center>
+     
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="565.0" prefWidth="1000.0" spacing="10.0" styleClass="background" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="30.0" prefWidth="744.0" text="                                                             Remote Connection Test" textFill="#403d3d">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" top="30.0" />
+               </VBox.margin>
+            </Label>
+         
+    
+            <HBox prefHeight="30.0" prefWidth="341.0">
+               <children>
+                    <Label text="                                                                       From IP Address                     ">
+                     <font>
+                        <Font name="Cambria Bold" size="15.0" />
+                     </font>
+                     </Label>
+                  <HBox>
+                     <children>
+                           
+                        <TextField fx:id="fromIpAddressText" promptText="From IP Address" />
+                     </children>
+                  </HBox>
+               </children>
+               </HBox>
+               <HBox prefHeight="30.0" prefWidth="341.0">
+                <children>
+                    <Label text="                                                                      To IP Address                            ">
+                     <font>
+                        <Font name="Cambria Bold" size="15.0" />
+                     </font>
+                   
+                  </Label>
+                  <HBox>
+                     <children>
+                        
+                        
+                        <TextField fx:id="toIpAddressText" promptText="To IP Address" />
+                     </children>
+                  </HBox>
+               </children>
+              </HBox>
+              <HBox prefHeight="30.0" prefWidth="341.0">
+               <children>
+                    <Label text="                                                                       User Name                                  ">
+                     <font>
+                        <Font name="Cambria Bold" size="15.0" />
+                     </font>
+                    
+                  </Label>
+                  <TextField fx:id="remoteUserNameText" prefHeight="25.0" prefWidth="146.0" promptText="User Name" />
+               </children>
+                   </HBox>
+                   <HBox prefHeight="30.0" prefWidth="341.0">
+               <children>
+                    <Label text="                                                                       Password                                    ">
+                     <font>
+                        <Font name="Cambria Bold" size="15.0" />
+                     </font>
+                    
+                  </Label>
+                  
+                  <PasswordField fx:id="remotePasswordText" promptText="Password" />
+               </children>
+            </HBox><HBox prefHeight="24.0" prefWidth="990.0">
+                     <padding>
+            <Insets bottom="60.0" left="5.0" right="5.0" />
+         </padding></HBox>
+  <HBox alignment="TOP_CENTER">
+               <children>
+                  <Button fx:id="resetRemote" mnemonicParsing="false" onAction="#clearRemoteFiled" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: white;" text="Reset">
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#1965d0" />
+                     </effect>
+                  </Button><HBox>
+                     <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </padding></HBox>
+                  <Button fx:id="testConnection" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#remoteConnectionTest" prefHeight="31.0" prefWidth="153.0" styleClass="btnGreen" text="Test Connection" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#6468b2" />
+                     </effect>
+                  </Button>
+                
+               </children>
+            </HBox>
+            
+            <HBox prefHeight="30.0" prefWidth="167.0" />
+            <HBox />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>
