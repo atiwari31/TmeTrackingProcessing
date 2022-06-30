@@ -1,21 +1,13 @@
 package com.timetracking;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.scheduling.annotation.EnableScheduling;
-
-import javafx.application.Application;
 
 @SpringBootApplication
-@EnableScheduling
 public class TimeTrackingApp {
 
-	protected ConfigurableApplicationContext springContext;
-
-	public static void main(final String[] args) {
-		Application.launch(args);
+	public static void main(String[] args) {
+		SpringApplication.run(TimeTrackingApp.class, args);
 	}
 
-	}
-
-
+}
